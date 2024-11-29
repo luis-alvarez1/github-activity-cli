@@ -14,7 +14,9 @@
     "license": "MIT",
     "description": "A CLI tool to check recent activity by an specified user.",
     "dependencies": {
-        "dotenv": "^16.4.5"
+        "dotenv": "^16.4.5",
+        "octokit": "^4.0.2",
+        "chalk": "4.1.2"
     },
     "devDependencies": {
         "@types/jest": "^29.5.14",
