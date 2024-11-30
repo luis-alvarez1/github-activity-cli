@@ -1,29 +1,35 @@
 {
     "name": "github-activity-cli",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
         "start": "node dist/server.js",
         "build": "tsc",
-        "start:dev": "npx nodemon",
+        "build:dev": "tsc -w",
+        "start:dev": "nodemon dist/index.js",
         "test": "jest",
         "test:dev": "jest --watch"
     },
     "keywords": [],
     "author": "Luis Alvarez",
     "license": "MIT",
+    "bin": {
+        "github-activity-cli": "dist/index.js"
+    },
     "description": "A CLI tool to check recent activity by an specified user.",
     "dependencies": {
-        "dotenv": "^16.4.5",
-        "octokit": "^4.0.2",
-        "chalk": "4.1.2"
+        "@octokit/rest": "^21.0.2",
+        "chalk": "4.1.2",
+        "dotenv": "^16.4.5"
     },
     "devDependencies": {
+        "@octokit/types": "^13.6.2",
         "@types/jest": "^29.5.14",
         "@types/node": "^22.10.1",
         "jest": "^29.7.0",
         "nodemon": "^3.1.7",
         "prettier": "3.4.1",
+        "ts-node": "^10.9.2",
         "typescript": "^5.7.2"
     }
 }

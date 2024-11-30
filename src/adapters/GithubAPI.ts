@@ -1,4 +1,5 @@
-import { Octokit } from 'octokit';
+import { Octokit } from '@octokit/rest';
+import { RequestError } from '@octokit/types';
 import { APIAdapter } from './interfaces/APIAdapter';
 import dotenv from 'dotenv';
 
@@ -13,6 +14,7 @@ export class GitHubAPIAdapter implements APIAdapter {
         });
     }
     async get<T>(url: string, params: any): Promise<T> {
-        return await this.octokit.request(`GET ${url}`, params);
+        const response = await this.octokit.request(`GET ${url}`, params);
+        return response.data;
     }
 }
