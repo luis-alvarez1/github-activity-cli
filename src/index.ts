@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import { CLIHandler } from './adapters/cli';
+import { CLIHandler } from './infraestructure/CLIHandler.js';
 
-// GET /users/{username}/events
 const cli = new CLIHandler();
 
 cli.run();

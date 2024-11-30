@@ -1,16 +1,18 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "lib": ["es6"],
-        "allowJs": true,
-        "outDir": "dist",
-        "rootDir": "src",
-        "strict": true,
-        "noImplicitAny": true,
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "moduleResolution": "node"
+        "target": "ES2022",
+        "module": "ESNext", // Keep ESNext for ESM
+        "moduleResolution": "node", // Ensure node-style resolution
+        "esModuleInterop": true, // Ensure compatibility with CommonJS modules
+        "outDir": "dist", // Keep the dist directory
+        "sourceMap": true, // Keep source maps for debugging
+        "strict": true, // Enable strict type checking
+        "resolveJsonModule": true // Allow JSON imports (if needed)
     },
-    "exclude": ["./dist/**/*", "tests", "jest.config.ts"]
+    "include": [
+        "src/**/*.ts" // Include all TypeScript files under src
+    ],
+    "exclude": [
+        "node_modules" // Exclude node_modules
+    ]
 }

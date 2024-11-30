@@ -1,12 +1,31 @@
 export interface Activity {
     id: string;
-    type: string;
+    type: ActivityType;
     actor: Actor;
     repo: ActivityRepo;
     payload: Payload;
     public: boolean;
     created_at: Date;
     org?: Actor;
+}
+
+enum ActivityType {
+    CreateEvent = 'CreateEvent',
+    DeleteEvent = 'DeleteEvent',
+    ForkEvent = 'ForkEvent',
+    GollumEvent = 'GollumEvent',
+    IssueCommentEvent = 'IssueCommentEvent',
+    IssuesEvent = 'IssuesEvent',
+    MemberEvent = 'MemberEvent',
+    PublicEvent = 'PublicEvent',
+    PullRequestEvent = 'PullRequestEvent',
+    PullRequestReviewEvent = 'PullRequestReviewEvent',
+    PullRequestReviewCommentEvent = 'PullRequestReviewCommentEvent',
+    PullRequestReviewThreadEvent = 'PullRequestReviewThreadEvent',
+    PushEvent = 'PushEvent',
+    ReleaseEvent = 'ReleaseEvent',
+    SponsorshipEvent = 'SponsorshipEvent',
+    WatchEvent = 'WatchEvent',
 }
 
 interface Actor {
