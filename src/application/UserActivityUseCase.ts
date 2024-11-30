@@ -2,7 +2,10 @@ import { GitHubAPI } from '../domain/adapters/GithubAPI.js';
 import { Activity } from '../domain/adapters/interfaces/GitHubAPIResponse.js';
 
 export class UserActivityUseCase {
-    private api = new GitHubAPI();
+    private api: GitHubAPI;
+    constructor() {
+        this.api = new GitHubAPI();
+    }
 
     async getUserActivity(username: string) {
         try {
@@ -21,5 +24,7 @@ export class UserActivityUseCase {
         }
     }
     // TODO: Map response for CLI hanlder and printing elements with styling
-    async mapResponse(response: Activity[]) {}
+    async mapResponse(response: Activity[]) {
+        response.map((activity: Activity) => {});
+    }
 }

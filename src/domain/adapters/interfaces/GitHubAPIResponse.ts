@@ -9,7 +9,7 @@ export interface Activity {
     org?: Actor;
 }
 
-enum ActivityType {
+export enum ActivityType {
     CreateEvent = 'CreateEvent',
     DeleteEvent = 'DeleteEvent',
     ForkEvent = 'ForkEvent',
