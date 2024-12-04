@@ -1,7 +1,7 @@
 import { Octokit } from '@octokit/rest';
-import { APIAdapter } from './interfaces/APIAdapter.js';
 import dotenv from 'dotenv';
-import { OctokitParams } from './interfaces/OctokitParams.js';
+import { APIAdapter } from '../adapters/interfaces/APIAdapter.js';
+import { OctokitParams } from '../adapters/interfaces/OctokitParams.js';
 
 dotenv.config();
 

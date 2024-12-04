@@ -1,4 +1,4 @@
-import { GitHubAPI } from '../domain/adapters/GithubAPI.js';
+import { GitHubAPI } from '../domain/api/GithubAPI.js';
 import { Activity } from '../domain/adapters/interfaces/GitHubAPIResponse.js';
 import { matchActivityType } from '../domain/common/matchActivityType.js';
 
