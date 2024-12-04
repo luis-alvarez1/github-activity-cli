@@ -39,7 +39,7 @@ export const matchActivityType = {
         );
     },
     [ActivityType.PublicEvent]: (activity: Activity) => {
-        return chalk.whiteBright(
+        return chalk.greenBright(
             `${activity.actor.login} made ${activity.repo.name} public`
         );
     },
@@ -79,7 +79,7 @@ export const matchActivityType = {
         );
     },
     [ActivityType.WatchEvent]: (activity: Activity) => {
-        return chalk.blueBright(
+        return chalk.greenBright(
             `${activity.actor.login} watched ${activity.repo.name}`
         );
     },
