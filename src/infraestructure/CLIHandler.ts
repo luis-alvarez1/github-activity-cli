@@ -6,7 +6,7 @@ export class CLIHandler {
 
     async run() {
         // const username = process.argv[2];
-        const username = 'Klerith';
+        const username = 'luis-alvarez1';
         if (!username) {
             console.log(chalk.redBright('Please provide a GitHub username.'));
             return;

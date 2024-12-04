@@ -1,5 +1,6 @@
 import { GitHubAPI } from '../domain/adapters/GithubAPI.js';
 import { Activity } from '../domain/adapters/interfaces/GitHubAPIResponse.js';
+import { matchActivityType } from '../domain/common/matchActivityType.js';
 
 export class UserActivityUseCase {
     private api: GitHubAPI;
@@ -15,7 +16,7 @@ export class UserActivityUseCase {
                     username,
                 }
             );
-            console.log(response);
+            this.mapResponse(response);
         } catch (error) {
             console.error(
                 'Error fetching user activity:',
@@ -23,8 +24,10 @@ export class UserActivityUseCase {
             );
         }
     }
-    // TODO: Map response for CLI hanlder and printing elements with styling
-    async mapResponse(response: Activity[]) {
-        response.map((activity: Activity) => {});
+
+    mapResponse(activities: Activity[]) {
+        activities.map((activity) => {
+            console.log(matchActivityType[activity.type](activity));
+        });
     }
 }
