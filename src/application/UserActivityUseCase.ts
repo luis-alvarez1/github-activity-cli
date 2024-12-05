@@ -1,6 +1,7 @@
 import { GitHubAPI } from '../domain/api/GithubAPI.js';
 import { Activity } from '../domain/adapters/interfaces/GitHubAPIResponse.js';
 import { matchActivityType } from '../domain/common/matchActivityType.js';
+import chalk from 'chalk';
 
 export class UserActivityUseCase {
     private api: GitHubAPI;
@@ -19,8 +20,8 @@ export class UserActivityUseCase {
             this.mapResponse(response);
         } catch (error) {
             console.error(
-                'Error fetching user activity:',
-                (error as Error).message
+                chalk.redBright('Error fetching user activity:'),
+                chalk.redBright((error as Error).message)
             );
         }
     }

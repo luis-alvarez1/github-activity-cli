@@ -54,7 +54,10 @@ interface Payload {
     ref_type?: string;
     pusher_type?: string;
     master_branch?: string;
-    description?: null;
+    description?: string | null;
+    member?: User;
+    review?: Review;
+    release?: Release;
 }
 
 interface Comment {
@@ -256,4 +259,65 @@ interface ActivityRepo {
     id: number;
     name: string;
     url: string;
+}
+
+interface Review {
+    id: number;
+    node_id: string;
+    user: User;
+    body: string;
+    state: string;
+    html_url: string;
+    pull_request_url: string;
+    _links: Links;
+    submitted_at: Date;
+    commit_id: string;
+    author_association: string;
+}
+
+interface Links {
+    html: HTML;
+    pull_request: HTML;
+}
+
+interface HTML {
+    href: string;
+}
+
+interface Release {
+    url: string;
+    html_url: string;
+    assets_url: string;
+    upload_url: string;
+    tarball_url: string;
+    zipball_url: string;
+    discussion_url: string;
+    id: number;
+    node_id: string;
+    tag_name: string;
+    target_commitish: string;
+    name: string;
+    body: string;
+    draft: boolean;
+    prerelease: boolean;
+    created_at: Date;
+    published_at: Date;
+    author: Author;
+    assets: Asset[];
+}
+
+interface Asset {
+    url: string;
+    browser_download_url: string;
+    id: number;
+    node_id: string;
+    name: string;
+    label: string;
+    state: string;
+    content_type: string;
+    size: number;
+    download_count: number;
+    created_at: Date;
+    updated_at: Date;
+    uploader: Author;
 }

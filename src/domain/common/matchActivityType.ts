@@ -25,17 +25,17 @@ export const matchActivityType = {
     },
     [ActivityType.IssueCommentEvent]: (activity: Activity) => {
         return chalk.magentaBright(
-            `${activity.actor.login} commented on issue for ${activity.repo.name}`
+            `${activity.actor.login} commented on issue (${activity.payload.issue?.title}) for ${activity.repo.name}`
         );
     },
     [ActivityType.IssuesEvent]: (activity: Activity) => {
         return chalk.magentaBright(
-            `${activity.actor.login} interacted on an issue for ${activity.repo.name}`
+            `${activity.actor.login} ${activity.payload.action} on an issue (${activity.payload.issue?.title}) for ${activity.repo.name}`
         );
     },
     [ActivityType.MemberEvent]: (activity: Activity) => {
         return chalk.greenBright(
-            `${activity.actor.login} modified repository contributors for ${activity.repo.name}`
+            `${activity.actor.login} ${activity.payload.action} ${activity.payload.member?.login} as a collaborator for ${activity.repo.name}`
         );
     },
     [ActivityType.PublicEvent]: (activity: Activity) => {
@@ -45,22 +45,22 @@ export const matchActivityType = {
     },
     [ActivityType.PullRequestEvent]: (activity: Activity) => {
         return chalk.whiteBright(
-            `${activity.actor.login} pull request activit related to ${activity.repo.name}`
+            `${activity.actor.login} ${activity.payload.action} pull request (${activity.payload.pull_request?.title}) for ${activity.repo.name}`
         );
     },
     [ActivityType.PullRequestReviewEvent]: (activity: Activity) => {
         return chalk.whiteBright(
-            `${activity.actor.login} pull request review activity related to ${activity.repo.name}`
+            `${activity.actor.login} ${activity.payload.action} a review (${activity.payload.review?.state}) for pull request (${activity.payload.pull_request?.title}) for ${activity.repo.name}`
         );
     },
     [ActivityType.PullRequestReviewCommentEvent]: (activity: Activity) => {
         return chalk.whiteBright(
-            `${activity.actor.login} pull request review comment activity related to ${activity.repo.name}`
+            `${activity.actor.login} ${activity.payload.action} a comment for a review for pull request (${activity.payload.pull_request?.title}) for ${activity.repo.name}`
         );
     },
     [ActivityType.PullRequestReviewThreadEvent]: (activity: Activity) => {
         return chalk.whiteBright(
-            `${activity.actor.login} pull request review thread activity related to ${activity.repo.name}`
+            `${activity.actor.login} marked as ${activity.payload.action} a review for pull request (${activity.payload.pull_request?.title}) for ${activity.repo.name}`
         );
     },
     [ActivityType.PushEvent]: (activity: Activity) => {
@@ -70,17 +70,17 @@ export const matchActivityType = {
     },
     [ActivityType.ReleaseEvent]: (activity: Activity) => {
         return chalk.yellowBright(
-            `${activity.actor.login} release activity related to ${activity.repo.name}`
+            `${activity.actor.login} ${activity.payload.action} a release (${activity.payload.release?.name}) for ${activity.repo.name}`
         );
     },
     [ActivityType.SponsorshipEvent]: (activity: Activity) => {
         return chalk.cyanBright(
-            `${activity.actor.login} sponsorship activity related to ${activity.repo.name}`
+            `${activity.actor.login} ${activity.payload.action} a sponsorship for ${activity.repo.name}`
         );
     },
     [ActivityType.WatchEvent]: (activity: Activity) => {
         return chalk.greenBright(
-            `${activity.actor.login} watched ${activity.repo.name}`
+            `${activity.actor.login} ${activity.payload.action} watching ${activity.repo.name}`
         );
     },
 };
