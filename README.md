@@ -35,7 +35,7 @@ This project involves building a simple command line interface (CLI) to fetch th
 
 3. Modify `.env` file:
 
-    Copy the content of `.env.example` into `.env` file and replace `GITHUB_AUTH_TOKEN` with yout own [GitHub API Key](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+    Copy the content of `.env.example` into `.env` file and replace `GITHUB_AUTH_TOKEN` with your own [GitHub API Key](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
 
     ```bash
     GITHUB_AUTH_TOKEN = "YOUR_GITHUB_API_KEY"
