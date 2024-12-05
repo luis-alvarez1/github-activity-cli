@@ -1,12 +1,12 @@
 # Task Tracker CLI
 
-This project involves building a simple command line interface (CLI) to fetch the recent activity of a GitHub user and display it in the terminal. This project helps to practice programming skills including working with APIs, handling JSON data, and building a simple CLI application.
+This project involves building a simple command line interface (CLI) to fetch the recent activity of a GitHub user and display it in the terminal.
 
 ## Features
 
 - Provide the GitHub username as an argument when running the CLI.
-- Fetch the recent activity of the specified GitHub user using the GitHub API.
-- Display the fetched activity in the terminal.
+- Fetches the recent activity of the specified GitHub user using the GitHub API.
+- Displays the fetched activity in the terminal.
 
 ## Requirements
 
@@ -24,27 +24,35 @@ This project involves building a simple command line interface (CLI) to fetch th
 
 2. Install dependencies:
 
-- NPM
-    ```sh
-    npm install
-    ```
-- Yarn
-    ```sh
-    yarn install
+    - NPM
+        ```sh
+        npm install
+        ```
+    - Yarn
+        ```sh
+        yarn install
+        ```
+
+3. Modify `.env` file:
+
+    Copy the content of `.env.example` into `.env` file and replace `GITHUB_AUTH_TOKEN` with yout own [GitHub API Key](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+
+    ```bash
+    GITHUB_AUTH_TOKEN = "YOUR_GITHUB_API_KEY"
     ```
 
-3. Compile TypeScript to JavaScript:
+4. Compile TypeScript to JavaScript:
 
-- NPM
-    ```sh
-    npm run build
-    ```
-- Yarn
-    ```sh
-    yarn build
-    ```
+    - NPM
+        ```sh
+        npm run build
+        ```
+    - Yarn
+        ```sh
+        yarn build
+        ```
 
-4. Install the CLI on your system:
+5. Install the CLI on your system:
 
     ```sh
     npm install -g
@@ -55,7 +63,7 @@ This project involves building a simple command line interface (CLI) to fetch th
 ### List last GitHub user activity
 
 ```bash
-github-activity <username>
+github-activity-cli <username>
 ```
 
 ### Display example
