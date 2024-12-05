@@ -14,6 +14,10 @@ export class CLIHandler {
             console.log(chalk.redBright('Please provide a GitHub username.'));
             return;
         }
+        console.log(
+            chalk.yellowBright('LAST GITHUB USER ACTIVITY FOR: '),
+            chalk.magentaBright(username)
+        );
         await this.userActivity.getUserActivity(username);
     }
 }
